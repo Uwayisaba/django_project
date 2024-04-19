@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+</head>
+<body>
+   
+    <div class="form">
+        <h1>Register Page</h1>
+       
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="fname">First Name:</label>
+            <input type="text" placeholder="Enter your first name" name="fname">
+             <br>
+            <label for="lname">Last Name:</label>
+            <input type="text" placeholder="Enter your last name" name="lname">
+             <br>
+            <label for="Uname">Username:</label>
+            <input type="text" placeholder="CREATE USERNAME" name="Uname">
+              <br>
+            <label for="Email">Email:</label>
+            <input type="email" placeholder="Enter your email" name="Email">
+            <br>
+            <label for="pswd">Enter Password:</label>
+            <input type="password" placeholder="create a password" name="pswd">
+           <br>
+            <button type="submit"> Submit</button>
+            <br>
+            <P>Already have an account? <a href="{% url 'login-page' %}">Login</a></P>
+        
+        </form>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Leads{% endblock %}
+
+{% block content %}
+<div class="py-6 px-6">
+    <h1 class="text-xl"> leads </h1>
+    <div class="card mb-2">
+        {% if lead.image %}
+            <img class="card-img-top" src="{{ lead.image.url }}">
+        {% endif %}
+    </div>
+
+    <a href="{% url 'add_lead' %}" class="inline-block py-4 px-6 bg-red rounded-xl text-blue ">Add Lead </a> 
+        <div class="mt-6 flex justify-between ">
+            <p class="py-4 px-2 bg-gray-200 font-semibold w-full"> Name</p>
+            <p class="py-4 px-2 bg-gray-200 font-semibold w-full" > Proirity</p>
+            <p class="py-4 px-2 bg-gray-200 font-semibold w-full"> Status</p>
+        </div>
+    {% for lead in leads %}
+   
+           <div class="flex justify-between">
+            <p class="py-2 px-2 w-full {% cycle 'bg-gray-600' '' %}">
+              <a href="{% url 'leads_detail' lead.id %}">{{lead.name}} </a></p>
+            <p class="py-2 px-2 w-full {% cycle 'bg-gray-600' '' %}">{{lead.get_priority_display}}</p>
+            <p class="py-2 px-2 w-full {% cycle 'bg-gray-600' '' %}">{{lead.status}}</p>
+           </div>
+           
+
+
+    {% endfor %}
+    
+</div>
+
+{% endblock %}

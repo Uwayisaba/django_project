@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Add Lead {% endblock %}
+
+{% block content %}
+  <div class="py-4 px-10 "
+     <h1 class="text-xl"> Add lead </h1>
+      {{team.plan.max_leads}}-{{team.leads.all|length}}
+
+      {% if team.plan.max_leads < team.leads.all|length %}
+
+            <form method="post" action=".">
+                {% csrf_token %}
+                {{form.as_p}}
+
+            <button class="py-3 bg-teal-500 text-white rounded-xl "> Submit</button>
+            </form>
+      {%else%}
+      <p>You have reached your limits </p>
+      {%endif%}
+   </div>
+
+{% endblock %}

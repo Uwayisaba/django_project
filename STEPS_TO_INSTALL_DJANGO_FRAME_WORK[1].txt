@@ -1,0 +1,41 @@
+*to check the python version:
+py --version
+*to check the python pip version:
+py -m pip --version
+*to install pip:
+py -m pip install --upgrade pip.
+*to install virtual environment:
+py -m venv virtual_environment_name
+* to activate script folder:
+example:
+C:\Users\Fizzo\Documents\Jules\django>myvirtualenv\Scripts\activate
+* to install django:
+pip install django
+/*[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip*/
+*AFTER BEING SUCCESS FULL, you can create a project by typing:
+django-admin startproject project_name
+example:(myvirtualenv) C:\Users\Fizzo\Documents\Jules\django>django-admin startproject django_new_bee
+*
+---------in vscode--------
+cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at
+
+This is because the user your running the script as has a undefined ExecutionPolicy You could fix this by running the following in powershell:
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+--------------------------------------------------
+*if you want to run a project you type:
+example:(myvirtualenv) C:\Users\Fizzo\Documents\Jules\django>cd django_new_bee
+(myvirtualenv) C:\Users\Fizzo\Documents\Jules\django\django_new_bee>
+(myvirtualenv) C:\Users\Fizzo\Documents\Jules\django\django_new_bee>py manage.py runserver
+and then copy the http address to get the result after you paste it in webbrowser search engine.
+* to create application
+py manage.py startapp members
+
+----thanks!----
+
+python manage.py migrate
+
+
+
+
